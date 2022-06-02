@@ -10,8 +10,8 @@ cantidad_numeros = 4
 promedio = ( a + b + c + d )/cantidad_numeros
 
 """
-lo que quieran
-es lo que escribi
+Lo que quieran,
+es lo que escribí
 """
 int("3")
 float("3")
