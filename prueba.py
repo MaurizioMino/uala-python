@@ -13,9 +13,6 @@ promedio = ( a + b + c + d )/cantidad_numeros
 Lo que quieran,
 es lo que escribí
 """
-int("3")
-float("3")
-str(4)
 print( "El promedio de " + str(promedio) )
 print( "Promedio de " + promedio )
 #print(promedio)
