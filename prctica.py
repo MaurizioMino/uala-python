@@ -9,6 +9,8 @@ print (b)
 print (a + b + c)
 
 #promedio
-print (a + b + c) / 3
+print (a + b + c) /3
 
+.DS_Store
+.idea/
 
