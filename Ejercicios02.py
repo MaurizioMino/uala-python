@@ -22,9 +22,14 @@ for elemento in lista_a:
 # 3. Iterar a traves de un diccionario con un for para imprimir un texto con ambos valores (Minimo 5 elementos)
 
 diccionario_A = {1: "a", 2: "b", 3: "c", 4: "d", 5: "e"}
-
-
+for key, elemento in diccionario_A.items():
+    print(key, ": ", elemento)
 
 
 # 4. Realizar un while que agregue un caracter o un element a alguna variable, hasta que supere un largo de 8 
 # elementos (empezar de algo vacio). Imprimir cada iteracion.
+
+variable = ""
+while len(variable) <= 8:
+    variable += "1"
+    print(variable)
