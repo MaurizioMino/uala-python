@@ -1,18 +1,31 @@
-numero = 111_111.52
+from libr import suma
 
-a = 2
-b = 3
-c = 0
-d = 5
+class Persona:
 
-cantidad_numeros = 4
+    personas = []
 
-promedio = ( a + b + c + d )/cantidad_numeros
+    def __init__(self, nombre, documento):
+        self.name = nombre
+        self.dni = documento
+        Persona.personas.append(self)
 
-"""
-Lo que quieran,
-es lo que escribí
-"""
-print( "El promedio de " + str(promedio) )
-print( "Promedio de " + promedio )
-#print(promedio)
+    def dar_info( self ):
+        return f'Name: {self.name}\nDni: {self.dni}\n'
+
+    @staticmethod
+    def contar_personas( ):
+        return len(Persona.personas)
+
+
+
+a = Persona("Pepito", [1, 2, 3, 9, 6] )
+print(a.contar_personas())
+
+b = Persona("Jorge", 314159265)
+c = Persona("Pepito", 314159265)
+d = Persona("Pepito", 314159265)
+
+#print(a.contar_personas())
+#print(Persona.contar_personas())
+
+print(suma(2, 3))
