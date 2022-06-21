@@ -1,6 +1,7 @@
 class Alumno:
 
     cantidad_alumnos = 0
+    # Que haya un array en dicha clase que contenga a todos los alumnos que se van creando
     registro_alumnos = []
 
     def __init__(self, legajo, nombre, apellido, notas):
@@ -30,20 +31,31 @@ class Alumno:
     def dar_alumnos():
         registro = []
         for alumno in Alumno.registro_alumnos:
-            datos_alumnos = {"legajo" : alumno.legajo, "apellido": alumno.apellido, "nombre": alumno.nombre}
+            datos_alumnos = {"legajo" : alumno.legajo, "apellido": alumno.apellido, "nombre": alumno.nombre, "promedio": alumno.promedio}
             registro.append(datos_alumnos)
         return registro
 
-    
+
+    # Generar método realice el promedio de las notas    
     def dar_promedio(self):
         return sum(self.notas) / len(self.notas)
 
-
+    
+    # Generar método traiga la nota más alta
     def mayor_nota(self):
         return max(self.notas)
     
 
+    # Generar método que elija al estudiante con mejor promedio, en caso de empate al que tenga menor desviación
+    def mejor_promedio():
+        alumno_mayor = max(Alumno.registro_alumnos, key = lambda item : item.promedio)
+        return alumno_mayor.dar_alumno()
 
+    
+    # Generar método que elija al estudiante con menor promedio, , en caso de empate al que tenga menor desviación estándar
+    def menor_promedio():
+        alumno_menor = min(Alumno.registro_alumnos, key = lambda item : item.promedio)
+        return alumno_menor.dar_alumno()
 
 # Programa principal
 a = Alumno(123, "Azul", "Quiroga", [1, 2, 3])
@@ -78,3 +90,9 @@ print("")
 
 
 print(Alumno.dar_alumnos())
+
+print("Mejor promedio:")
+print(Alumno.mejor_promedio())
+
+print("Menor promedio:")
+print(Alumno.menor_promedio())
