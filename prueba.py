@@ -1,26 +1,31 @@
-from libr import suma
+class Alumnos:
 
-class Persona:
+    alumnos = []
 
-    personas = []
 
-    def __init__(self, nombre, documento):
+    def __init__(self, nombre, apellido, edad, notas):
         self.name = nombre
-        self.dni = documento
-        Persona.personas.append(self)
+        self.apellido = apellido
+        self.edad = edad
+        self.notas = notas
+        Alumnos.alumnos.append(self)
+        self.promedio = self.promedio()
 
-    def dar_info( self ):
-        return f'Name: {self.name}\nDni: {self.dni}\n'
+
+    def promedio(self):
+        return sum(self.notas) / len(self.notas)
+
+    def dar_info_alumno( self ):
+        return f'Name: {self.name}\nApellido: {self.apellido}\nEdad: {self.edad}\nNotas: {self.notas}\n'
 
 
+    @staticmethod
+    def contar_alumnos( ):
+        return len(Alumnos.alumnos)
 
-a = Persona("Pepito", [1, 2, 3, 9, 6] )
 
-b = Persona("Jorge", 314159265)
-c = Persona("Pepito", 314159265)
-d = Persona("Pepito", 314159265)
+a = Alumnos("Maria", "Perez", 20, [6, 1, 3, 3, 4])
 
-#print(a.contar_personas())
-#print(Persona.contar_personas())
-
-print(suma(2, 3))
+print(a.dar_info_alumno)
+print(a.promedio)
+print(Alumnos.promedio)
